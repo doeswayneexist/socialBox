@@ -1,0 +1,117 @@
+<head>
+	<style type="text/css">
+
+		/*styling for the main containing box*/
+		.socialBox {
+			position: fixed;
+			top: 5px;
+			right: -73px;
+		}
+
+		/*styling for the divs that contain the social media content*/
+		.socialIcon {
+			margin-bottom: 4px;
+			position: relative;
+			width: 100px;
+			border-radius: 5px; 
+			padding: 2px;
+		}
+
+		/*the class given to the div that contains the sharing info*/
+		.socialCount {
+			position: absolute;
+			width: 250px;
+			left: -254px;
+			text-align: right;
+			display: none;
+		}
+
+		/*styles the divs that are directly inside the socialCount divs*/
+		.socialCount div {
+			display: inline-block;
+			border: solid 1px #E1E1E1;
+			border-radius: 4px;
+			padding: 4px;
+			font-size: 12px;
+			font-family: helvetica;
+		}
+
+		/*shows the count when you hover over a specific icon*/
+		.socialIcon:hover .socialCount{
+			display: block;
+		}
+
+		/*class that is applied to the .socialIcon divs by jQuery when they areclicked*/
+		.clicked {
+			left: -69px;
+		}
+
+		/*Background Colors*/
+		.fbBg {
+			background-color: #3B5998;
+		}
+		.twitBg {
+			background-color: #4EC2DC;
+		}
+		.stumBg {
+			background-color: #EB4924
+		}
+	</style>
+</head>
+
+
+<body>
+	<!-- thisbox is fixed to the top right of the screen -->
+	<div class="socialBox">
+
+		<!-- .socialIcon divs contain all the speicifc social network assets-->
+		<div class="socialIcon fbBg">
+
+			<!-- .socialCount divs contain the code needed to display the share count for each platform -->
+			<div class="socialCount">
+				<div>1,215 followers</div>
+			</div>
+			<img src="fb.png">
+		</div>
+		<div class="socialIcon twitBg">
+			<div class="socialCount">
+				<div>338,519 people like this.</div>
+			</div>
+			<img src="twit.png">
+		</div>
+		<div class="socialIcon stumBg">
+			<div class="socialCount">
+				<div>1,215 followers</div>
+			</div>
+			<img src="stum.png">
+		</div>
+
+	</div>
+
+	<!-- Google CDN: jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+	<!-- my script -->
+	<script type="text/javascript">
+		
+		//get all the social icons and register this function
+		$(".socialIcon").click(function () {
+
+			//close the other ones if they are open except the clicked one
+			if($('.clicked').length) $('.clicked').not(this).toggleClass('clicked');
+
+			//toggle the clicked class
+			$(this).toggleClass('clicked');
+
+		})
+
+		// close when outside area is clicked
+		$(document).mouseup(function (e) {
+	    var container = $(".socialIcon");
+
+	    if (container.has(e.target).length === 0) {
+	    	$('.clicked').toggleClass('clicked');
+	    }
+		});
+	</script>
+</body>
