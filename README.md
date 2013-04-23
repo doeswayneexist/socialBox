@@ -3,9 +3,18 @@ socialBox
 
 The social media box that Adam requested.
 
-Usage
+Installation
 -----
 Copy `socialBox.js` and `socialBox.js.css` into your project directory.
+
+```
+this guide assumes a root directory structure of:
+/root
+   /img
+      images
+   socialBox.js
+   socialBox.js.css
+```
 
 Add this line of code to your `<head>` tag:
 ```html
@@ -46,6 +55,7 @@ Add this chuck of code on any page that you want the socialBox to appear on:
 </div>
 ```
 >You may have to change the file path for the images and the .js and .css files if you did not place them all in your root directory.
+
 
 
 
