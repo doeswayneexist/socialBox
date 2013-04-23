@@ -1,0 +1,67 @@
+/*styling for the main containing box*/
+.socialBox {
+	position: fixed;
+	top: 5px;
+	right: -73px;
+}
+
+/*styling for the divs that contain the social media content*/
+.socialIcon {
+	margin-bottom: 4px;
+	position: relative;
+	width: 100px;
+	border-radius: 5px; 
+	padding: 2px;
+	-webkit-transition: all .5s ;
+	-moz-transition: all .5s ;
+	-ms-transition: all .5s ;
+	-o-transition: all .5s ;
+	transition: all .5s ;
+	background-color: #DDDDDD;
+}
+
+/*the class given to the div that contains the sharing info*/
+.socialCount {
+	position: absolute;
+	width: 250px;
+	left: -254px;
+	text-align: right;
+	display: none;
+}
+
+/*styles the divs that are directly inside the socialCount divs*/
+.socialCount div {
+	display: inline-block;
+	border: solid 1px #E1E1E1;
+	border-radius: 4px;
+	padding: 4px;
+	font-size: 12px;
+	font-family: helvetica;
+}
+
+/*shows the count when you hover over a specific icon*/
+.socialIcon:hover .socialCount{
+	display: block;
+}
+
+/*class that is applied to the .socialIcon divs by jQuery when they areclicked*/
+.clicked {
+	left: -69px;
+}
+
+/*Background Colors*/
+.fbBg:hover {
+	background-color: #3B5998;
+}
+.twitBg:hover {
+	background-color: #4EC2DC;
+}
+.stumBg:hover {
+	background-color: #EB4924
+}
+
+/*Fixer classes*/
+.fbBg img {
+	position: relative;
+	top: 2px;
+}
